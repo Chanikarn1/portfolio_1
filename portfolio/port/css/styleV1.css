@@ -37,7 +37,9 @@ a{
 .text-white{
   color: #fff;
 }
-
+.text-white{
+  color: #fff;
+}
 .p-0{
   padding: 0px;
 }
@@ -89,4 +91,11 @@ a{
   border-radius: 30px;
  
   color: #fff;
+}
+.img-header{
+  background-image: url(../img/as3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 750px;
+  background-position: center;
 }
