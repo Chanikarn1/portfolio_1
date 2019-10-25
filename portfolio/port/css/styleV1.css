@@ -40,6 +40,12 @@ a{
 .text-white{
   color: #fff;
 }
+.bg-primary{
+  background:#FFA303!important;
+}
+.bg-secondary{
+  background:#2F2440!important;
+}
 .p-0{
   padding: 0px;
 }
@@ -58,6 +64,10 @@ a{
 .px-4{
   padding-left: 20px;
   padding-right: 20px;
+}
+.px-7{
+  padding-left: 35px;
+  padding-right: 35px;
 }
 .py-1{
   padding-top:5px;
@@ -79,6 +89,18 @@ a{
   padding-top:30px;
   padding-bottom: 30px;
 }
+.mg-l-1{
+  margin-left:5px
+}
+.mg-l-2{
+  margin-left:10px
+}
+.mg-r-1{
+  margin-right:5px
+}
+.mg-r-2{
+  margin-right:10px
+}
 .nav-menu a:active{
   background: rgb(72, 207, 173);
   border-radius: 30px;
@@ -98,4 +120,40 @@ a{
   background-size: cover;
   min-height: 750px;
   background-position: center;
+}
+.primary-btn{
+  background: #FFA303;
+  color:#fff;
+  border:solid 3px #FFA303;
+}
+.primary-btn:hover{
+  background:none;
+  color:#FFA303;
+}
+.title{
+  font-size:52px;
+}
+.sub-title{
+  font-size:20px;
+}
+.font-weight-super-bold{
+  font-weight: 800;
+}
+/* ---------------------------------------------------------------- */
+.img-header{
+  position: relative;
+}
+.img-header > div:first-child{
+  padding:100px 50px;
+}
+.img-header > div:last-child{
+  position: absolute;
+  bottom:5%;
+  padding: 0 60px;
+}
+.img-header .btn{
+  padding:12px 30px;
+}
+.img-header p{
+ max-width:700px;
 }
