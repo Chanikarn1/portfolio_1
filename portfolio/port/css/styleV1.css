@@ -37,8 +37,17 @@ a{
 .text-white{
   color: #fff;
 }
-.text-white{
-  color: #fff;
+.text-yellow{
+  color: #FFA303 !important;
+}
+.text-gray{
+  color: #808080 !important;
+}
+.text-20{
+  font-size: 20px;
+}
+.font-weight-bold-800{
+  font-weight: 800;
 }
 .bg-primary{
   background:#FFA303!important;
@@ -173,3 +182,10 @@ a{
 .main-content .icon{
   transition-duration: 0.5s;
 }    
+.intro-section{
+  background-image: url(../img/fluid4.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  margin-top: 150px;
+  min-height: 650px;
+}
