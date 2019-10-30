@@ -101,6 +101,9 @@ a{
 .mg-r-2{
   margin-right:10px
 }
+.mg-t-2{
+  margin-top:10px
+}
 .nav-menu a:active{
   background: rgb(72, 207, 173);
   border-radius: 30px;
@@ -157,3 +160,15 @@ a{
 .img-header p{
  max-width:700px;
 }
+.main-content > div{
+  display:flex;
+  align-items: center;
+  padding:30px;
+}
+.main-content .icon:hover{
+  padding-top:10px;
+/* transition-duration: 0.5s; */
+}   
+.main-content .icon{
+  transition-duration: 0.5s;
+}    
