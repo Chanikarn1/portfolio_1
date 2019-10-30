@@ -151,8 +151,9 @@ a{
 }
 .img-header > div:last-child{
   position: absolute;
-  bottom:5%;
+  bottom:-100px;
   padding: 0 60px;
+  z-index: 999;
 }
 .img-header .btn{
   padding:12px 30px;
