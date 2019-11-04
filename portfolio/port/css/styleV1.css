@@ -189,3 +189,19 @@ a{
   margin-top: 150px;
   min-height: 650px;
 }
+.staff{
+  background-image: url(../img/div-bg1.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  margin-top: 150px;
+  min-height: 650px;
+}
+.staff-info{
+  width:100%;
+}
+.staff-info div img{
+  width:100%;
+}
+.staff-info .staff-content{
+  background: #fff;
+}
