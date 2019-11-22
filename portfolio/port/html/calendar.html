@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="../css/bootstrap-year-calendar.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+  
+    <div class="container">
+      <div class="row">
+        <div id="calendar" data-provide="calendar"></div>
+        <input type="hidden" id="startDate" value="">
+        <input type="hidden" id="endDate" value="">
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          Start : <span class="start"></span>
+          </div>
+        <div class="col-xs-12">
+          end : <span class="end"></span>
+          </div>
+          <button type="submit">click</button>
+        </div>
+      </div>
+    </div>
+
+  
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script src="../bootstrap-year-calendar.min.js"></script>
+    <script>
+    $(function() {
+        var currentYear = new Date().getFullYear();
+				var selectDate = {
+
+				};
+			
+      $('#calendar').calendar({
+          style:'background',
+          dataSource: [
+              
+          ],
+					disabledDays: [
+											startDate: new Date(2019, 2, 8),
+											endDate: new Date(2019, 2, 17)
+					],
+
+           enableRangeSelection: true,
+            clickDay: function(e){
+                console.log(e.element)
+                console.log("date"+e.date)
+                  var element = e.element;
+                  element.css('background','pink');
+                
+            },
+            daycontextMenu:null,
+            selectRange: function(e){
+              if( $('#startDate').val().length == 0){
+									start = e.startDate;
+									$('#startDate').val(start)
+									$('.start').text(start)
+									selectDate.startDate = start
+								}
+								else{
+									
+									var end = e.endDate;
+									$('#endDate').val(end)
+									$('.end').text(end)
+									selectDate.endDate = end
+									 var dataSource = $('#calendar').data('calendar').getDataSource();
+									dataSource.push(selectDate)
+									$('#calendar').data('calendar').setDataSource(dataSource);
+								}
+            },
+      });
+
+
+			
+      var a = {
+                startDate: new Date(2019, 2, 8),
+                endDate: new Date(2019, 2, 17)
+      };
+    $('button').click(function(){
+         var dataSource = $('#calendar').data('calendar').getDataSource();
+         dataSource.push(selectDate)
+        $('#calendar').data('calendar').setDataSource(dataSource);
+    })
+   
+
+    })
+    
+
+    </script>
+  </body>
+</html>
+  
