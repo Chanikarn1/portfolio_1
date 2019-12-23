@@ -12,6 +12,10 @@ a{
 #nav-bar {
   background: #ffffff;
   min-height:104px;
+  /* position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999; */
 }
 #nav-bar img{
   max-height: 50px;
@@ -204,4 +208,27 @@ a{
 }
 .staff-info .staff-content{
   background: #fff;
+}
+
+ .nav-menu li.icon {
+  display: none;
+} 
+.slide-down{
+  height: 50px;
+}
+#slideNavbar{
+  transition-duration: 2s;
+}
+@media(max-width: 768px){
+   .nav-menu li{
+    display:none;
+  } 
+  .nav-menu li.icon {
+    display:block;
+    float:right;
+    
+  }
+  .nav-menu{
+    justify-content: flex-end!important;
+  }
 }
