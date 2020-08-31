@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <script src="https://kit.fontawesome.com/a81d1be103.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/styleV1.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800&display=swap" rel="stylesheet">
+    <style>
+        .canvas{
+
+            height: 300px;
+            width:300px;
+            margin-top:20px;
+            background: #ddd;
+        }
+    </style>
+  </head>
+  <body>
+
+  <h1>Vue basics</h1>
+  <div id="app">
+      {{title}} {{wage}}
+      <p>I earn {{wage}} pounds per hour</p>
+      <button v-on:click="changeWage(1)">Increse wage by $1</button>
+      <button v-on:click="changeWage(-1)">Increse wage by $1</button>
+      <button v-on:click="changeWage(5)">Increse wage by $1</button>
+      <button v-on:click="changeWage(-2)">Increse wage by $1</button>
+      <button @click="logEvent">Log Event</button>
+      <div class="canvas" @mousemove="logCoords">
+        {{coords.x}} {{coords.y}}
+      </div>
+      <div>
+          My name is {{name}}
+      </div>
+      <input type="text" v-on:keyup="updateName">
+      <input type="text" v-on:keypress="updateName">
+      <input type="text"    v-model="name" name="dd">
+
+      <button @click.alt="logMessage">alt cilck</button>
+      <button @click.shift="logMessage">shift cilck</button>
+      <a href="http://www.google.com" @click.prevent="logMessage">Google</a>
+      <p v-if="showName">MArio</p>
+      <p v-else-if="showAge">25</p>
+      <button @click="toggleName">showNAme : {{ showName }}</button>
+      <button @click="toggleAge">showAge: {{ showAge }}</button>
+      <ul>
+          <li v-for="i in items">{{i}}</li>
+      </ul>
+      <div v-for="i in ninjas">
+        <p>{{i.name}}</p>
+        <p>{{i.age}}</p>
+        <p>{{i.belt}}</p>
+      </div>
+
+  </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+            new Vue({
+                el: '#app',
+                data:{
+                    title: 'becoming a vue ninja',
+                    wage: 22,
+                    coords:{
+                        x:0,
+                        y:0
+                    },
+                    name:"Fai",
+                    showName:false,
+                    showAge:false,
+                    items:['mushroom','Green shells','Red Shells','Banana','Start'],
+                    ninjas: [
+                        {name:'crystal',
+                        age:25,
+                        belt:'black'},
+
+                        {name:'Ryu',
+                        age:23,
+                        belt:'red'},
+                        {name:'ken',
+                        age:45,
+                        belt:'green'}
+                    ]
+                },
+                methods:{
+                    changeWage(amount){
+                        this.wage += amount
+                    },
+                    logEvent(e){
+                        console.log(e)
+                    },
+                    logCoords(e){
+                        this.coords.x = e.offsetX
+                        this.coords.y = e.offsetY
+                    },
+                    updateName(e){
+                        this.name = e.target.value
+                        console.log(this.name)
+                    },
+                    logMessage(){
+                        console.log("hello world")
+                    },
+                    toggleName(){
+                        this.showName = !this.showName
+                    },
+                   toggleAge(){
+                        this.showAge =!this.showAge
+                    }
+                }
+            })
+    </script>
+  </body>
+</html>
